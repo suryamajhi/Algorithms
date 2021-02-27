@@ -5,12 +5,7 @@ import edu.princeton.cs.algs4.Digraph;
 import edu.princeton.cs.algs4.DirectedCycle;
 import edu.princeton.cs.algs4.In;
 
-/**
- * I had to copy code from github.
- * I did the exact same thing. but still I could not figure out my mistake. In grader, they were like, symbol tables were not even beign initialized.
- * I was saving the synset and hypernym in field as arrays. I think that was my mistake. It was working very fine in localhost but the problem only aroused in the grader.
- *Plus, I was not allowed to use to In like this in localhost, but it works fine in grader. I don't get it.
- */
+
 
 public class WordNet {
 
