@@ -9,13 +9,13 @@ public class BurrowsWheeler {
 
     // apply Burrows-Wheeler transform,
     // reading from standard input and writing to standard output
-    public static void transform(){
+    public static void transform() {
         String s = BinaryStdIn.readString();
         CircularSuffixArray suffixArray = new CircularSuffixArray(s);
         char[] chars = new char[s.length()];
         int initial = 0;
-        for(int i = 0; i < s.length(); i++){
-            if(suffixArray.index(i) == 0){
+        for (int i = 0; i < s.length(); i++) {
+            if (suffixArray.index(i) == 0) {
                 initial = i;
                 chars[i] = s.charAt(s.length() - 1);
                 continue;
@@ -30,7 +30,7 @@ public class BurrowsWheeler {
 
     // apply Burrows-Wheeler inverse transform,
     // reading from standard input and writing to standard output
-    public static void inverseTransform(){
+    public static void inverseTransform() {
         int index = BinaryStdIn.readInt();
 
         String s = BinaryStdIn.readString();
@@ -57,14 +57,14 @@ public class BurrowsWheeler {
         //finding next[]
         int[] next = new int[t.length];
         Queue<Integer>[] queues = new Queue[257];
-        for(int i = 0; i <= 256; i++){
+        for (int i = 0; i <= 256; i++) {
             queues[i] = new Queue<>();
         }
 
-        for(int i = 0; i < t.length; i ++ ){
+        for (int i = 0; i < t.length; i++) {
             queues[t[i]].enqueue(i);
         }
-        for(int i = 0; i < t.length; i++){
+        for (int i = 0; i < t.length; i++) {
             next[i] = queues[first[i]].dequeue();
         }
 
@@ -74,7 +74,7 @@ public class BurrowsWheeler {
         realString[0] = first[index];
         int temp = next[index];
         int i = 1;
-        while(i < t.length){
+        while (i < t.length) {
             realString[i++] = first[temp];
             temp = next[temp];
         }
@@ -84,8 +84,8 @@ public class BurrowsWheeler {
 
     // if args[0] is "-", apply Burrows-Wheeler transform
     // if args[0] is "+", apply Burrows-Wheeler inverse transform
-    public static void main(String[] args){
-        if(args[0].equals("-"))
+    public static void main(String[] args) {
+        if (args[0].equals("-"))
             transform();
         else inverseTransform();
     }

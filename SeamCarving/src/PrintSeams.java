@@ -19,8 +19,8 @@
  *  1000.00   153.88   174.01*  284.01   194.50  1000.00  
  *  1000.00  1000.00* 1000.00  1000.00  1000.00  1000.00  
  *  Total energy = 2414.973496
- *  
- *  
+ *
+ *
  *  Horizontal seam: { 2 2 1 2 1 2 }
  *  1000.00  1000.00  1000.00  1000.00  1000.00  1000.00 
  *  1000.00   237.35   151.02*  234.09   107.89* 1000.00  
@@ -35,8 +35,8 @@ import edu.princeton.cs.algs4.Picture;
 import edu.princeton.cs.algs4.StdOut;
 
 public class PrintSeams {
-    private static final boolean HORIZONTAL   = true;
-    private static final boolean VERTICAL     = false;
+    private static final boolean HORIZONTAL = true;
+    private static final boolean VERTICAL = false;
 
     private static void printSeam(SeamCarver carver, int[] seam, boolean direction) {
         double totalSeamEnergy = 0.0;
@@ -46,14 +46,14 @@ public class PrintSeams {
                 double energy = carver.energy(col, row);
                 String marker = " ";
                 if ((direction == HORIZONTAL && row == seam[col]) ||
-                    (direction == VERTICAL   && col == seam[row])) {
+                        (direction == VERTICAL && col == seam[row])) {
                     marker = "*";
                     totalSeamEnergy += energy;
                 }
                 StdOut.printf("%7.2f%s ", energy, marker);
             }
             StdOut.println();
-        }                
+        }
         // StdOut.println();
         StdOut.printf("Total energy = %f\n", totalSeamEnergy);
         StdOut.println();
@@ -69,7 +69,7 @@ public class PrintSeams {
         StdOut.println();
 
         SeamCarver carver = new SeamCarver(picture);
-        
+
         StdOut.printf("Vertical seam: { ");
         int[] verticalSeam = carver.findVerticalSeam();
         for (int x : verticalSeam)

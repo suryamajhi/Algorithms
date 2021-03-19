@@ -6,7 +6,6 @@ import edu.princeton.cs.algs4.DirectedCycle;
 import edu.princeton.cs.algs4.In;
 
 
-
 public class WordNet {
 
     private final Digraph wordNet;
@@ -125,8 +124,8 @@ public class WordNet {
     }
 
     // Unit test
-     public static void main(String[] args) {
-    //Unit Testing
-     }
+    public static void main(String[] args) {
+        //Unit Testing
+    }
 
 }

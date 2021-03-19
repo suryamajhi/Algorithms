@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class BruteCollinearPoints {
-    private LineSegment [] segments;
+    private LineSegment[] segments;
+
     public BruteCollinearPoints(Point[] points) {
         if (points == null) throw new java.lang.NullPointerException("null argument to constructor");
         checkNullEntries(points);
@@ -23,10 +24,12 @@ public class BruteCollinearPoints {
                     }
         segments = segmentsList.toArray(new LineSegment[segmentsList.size()]);
     }
-    public int numberOfSegments()   {
+
+    public int numberOfSegments() {
         return segments.length;
     }
-    public LineSegment[] segments()   {
+
+    public LineSegment[] segments() {
         return segments;
     }
 
